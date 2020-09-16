@@ -1,0 +1,44 @@
+[
+  {
+    "icon": "fa fa-tags icon-xlarge",
+    "name": "Channel",
+    "url": "admin/channel/list",
+    "permission": "channel:list"
+  },
+  {
+    "icon": "fa fa-clone icon-xlarge",
+    "name": "Posts",
+    "url": "admin/post/list",
+    "permission": "post:list"
+  },
+  {
+    "icon": "fa fa-comments-o icon-xlarge",
+    "name": "Comments",
+    "url": "admin/comment/list",
+    "permission": "comment:list"
+  },
+  {
+    "icon": "fa fa-user icon-xlarge",
+    "name": "Users",
+    "url": "admin/user/list",
+    "permission": "user:list"
+  },
+  {
+    "icon": "fa fa fa-registered icon-xlarge",
+    "name": "Roles",
+    "url": "admin/role/list",
+    "permission": "role:list"
+  },
+  {
+    "icon": "fa fa-circle-o icon-xlarge",
+    "name": "Themes",
+    "url": "admin/theme/index",
+    "permission": "theme:index"
+  },
+  {
+    "icon": "fa fa-sun-o icon-xlarge",
+    "name": "Options",
+    "url": "admin/options/index",
+    "permission": "options:index"
+  }
+]
