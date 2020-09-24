@@ -3,7 +3,7 @@ package com.genhub.service.blog;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.genhub.domain.dto.blog.MessageVO;
+import com.genhub.domain.blog.dto.MessageVO;
 
 public interface MessageService {
 

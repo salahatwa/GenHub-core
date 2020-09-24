@@ -17,8 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import com.genhub.domain.blog.Favorite;
-import com.genhub.domain.dto.blog.FavoriteVO;
-import com.genhub.domain.dto.blog.PostVO;
+import com.genhub.domain.blog.dto.FavoriteVO;
+import com.genhub.domain.blog.dto.PostVO;
 import com.genhub.exceptions.ResourceAlreadyExistException;
 import com.genhub.exceptions.ResourceNotFoundException;
 import com.genhub.repository.blog.FavoriteRepository;

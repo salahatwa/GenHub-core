@@ -4,7 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import com.genhub.domain.blog.Favorite;
-import com.genhub.domain.dto.blog.FavoriteVO;
+import com.genhub.domain.blog.dto.FavoriteVO;
 
 public interface FavoriteService {
 	Page<FavoriteVO> pagingByUserId(Pageable pageable, long userId);

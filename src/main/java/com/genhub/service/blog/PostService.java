@@ -12,7 +12,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.genhub.domain.dto.blog.PostVO;
+import com.genhub.domain.blog.dto.PostVO;
 import com.genhub.utils.BlogConsts;
 
 @CacheConfig(cacheNames = BlogConsts.CACHE_USER)

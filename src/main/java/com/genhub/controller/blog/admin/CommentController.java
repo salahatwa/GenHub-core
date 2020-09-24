@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.genhub.domain.blog.dto.CommentVO;
 import com.genhub.domain.dto.Result;
-import com.genhub.domain.dto.blog.CommentVO;
 import com.genhub.service.blog.CommentService;
 import com.genhub.utils.Constant;
 

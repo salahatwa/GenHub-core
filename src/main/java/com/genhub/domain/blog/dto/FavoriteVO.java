@@ -1,4 +1,4 @@
-package com.genhub.domain.dto.blog;
+package com.genhub.domain.blog.dto;
 
 import com.genhub.domain.blog.Favorite;
 

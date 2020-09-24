@@ -1,7 +1,7 @@
 package com.genhub.service.blog;
 
-import com.genhub.domain.dto.blog.OpenOauthVO;
-import com.genhub.domain.dto.blog.UserVO;
+import com.genhub.domain.blog.dto.OpenOauthVO;
+import com.genhub.domain.blog.dto.UserVO;
 
 
 public interface OpenOauthService {

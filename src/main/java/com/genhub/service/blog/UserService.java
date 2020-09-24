@@ -9,8 +9,8 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.genhub.domain.dto.blog.AccountProfile;
-import com.genhub.domain.dto.blog.UserVO;
+import com.genhub.domain.blog.dto.AccountProfile;
+import com.genhub.domain.blog.dto.UserVO;
 import com.genhub.utils.BlogConsts;
 
 @CacheConfig(cacheNames = BlogConsts.CACHE_USER)

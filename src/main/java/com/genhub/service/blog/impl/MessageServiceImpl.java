@@ -16,9 +16,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.genhub.domain.blog.Message;
-import com.genhub.domain.dto.blog.MessageVO;
-import com.genhub.domain.dto.blog.PostVO;
-import com.genhub.domain.dto.blog.UserVO;
+import com.genhub.domain.blog.dto.MessageVO;
+import com.genhub.domain.blog.dto.PostVO;
+import com.genhub.domain.blog.dto.UserVO;
 import com.genhub.repository.blog.MessageRepository;
 import com.genhub.service.blog.MessageService;
 import com.genhub.service.blog.PostService;

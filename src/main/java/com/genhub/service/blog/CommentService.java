@@ -8,7 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import com.genhub.domain.blog.Comment;
-import com.genhub.domain.dto.blog.CommentVO;
+import com.genhub.domain.blog.dto.CommentVO;
 
 public interface CommentService {
 	Page<CommentVO> paging4Admin(Pageable pageable);

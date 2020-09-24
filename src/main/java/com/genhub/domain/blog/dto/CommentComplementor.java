@@ -1,4 +1,4 @@
-package com.genhub.domain.dto.blog;
+package com.genhub.domain.blog.dto;
 
 import java.util.List;
 import java.util.Map;

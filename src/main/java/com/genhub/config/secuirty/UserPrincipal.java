@@ -10,7 +10,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.genhub.domain.dto.blog.UserVO;
+import com.genhub.domain.blog.dto.UserVO;
 
 public class UserPrincipal implements UserDetails {
 	/**

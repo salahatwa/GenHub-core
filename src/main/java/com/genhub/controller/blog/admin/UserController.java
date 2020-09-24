@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.genhub.domain.Role;
+import com.genhub.domain.blog.dto.UserVO;
 import com.genhub.domain.dto.Result;
-import com.genhub.domain.dto.blog.UserVO;
 import com.genhub.service.blog.RoleService;
 import com.genhub.service.blog.UserRoleService;
 import com.genhub.service.blog.UserService;

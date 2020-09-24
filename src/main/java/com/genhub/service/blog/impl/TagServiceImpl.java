@@ -19,9 +19,9 @@ import org.springframework.util.Assert;
 
 import com.genhub.domain.blog.PostTag;
 import com.genhub.domain.blog.Tag;
-import com.genhub.domain.dto.blog.PostTagVO;
-import com.genhub.domain.dto.blog.PostVO;
-import com.genhub.domain.dto.blog.TagVO;
+import com.genhub.domain.blog.dto.PostTagVO;
+import com.genhub.domain.blog.dto.PostVO;
+import com.genhub.domain.blog.dto.TagVO;
 import com.genhub.repository.blog.PostTagRepository;
 import com.genhub.repository.blog.TagRepository;
 import com.genhub.service.blog.PostService;

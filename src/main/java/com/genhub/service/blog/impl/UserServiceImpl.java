@@ -24,9 +24,9 @@ import org.springframework.util.Assert;
 
 import com.genhub.domain.Role;
 import com.genhub.domain.User;
-import com.genhub.domain.dto.blog.AccountProfile;
-import com.genhub.domain.dto.blog.BadgesCount;
-import com.genhub.domain.dto.blog.UserVO;
+import com.genhub.domain.blog.dto.AccountProfile;
+import com.genhub.domain.blog.dto.BadgesCount;
+import com.genhub.domain.blog.dto.UserVO;
 import com.genhub.exceptions.BlogException;
 import com.genhub.exceptions.ResourceNotFoundException;
 import com.genhub.repository.blog.UserRepository;

@@ -15,14 +15,14 @@ import com.genhub.domain.blog.Message;
 import com.genhub.domain.blog.Post;
 import com.genhub.domain.blog.PostTag;
 import com.genhub.domain.blog.Tag;
-import com.genhub.domain.dto.blog.AccountProfile;
-import com.genhub.domain.dto.blog.CommentVO;
-import com.genhub.domain.dto.blog.FavoriteVO;
-import com.genhub.domain.dto.blog.MessageVO;
-import com.genhub.domain.dto.blog.PostTagVO;
-import com.genhub.domain.dto.blog.PostVO;
-import com.genhub.domain.dto.blog.TagVO;
-import com.genhub.domain.dto.blog.UserVO;
+import com.genhub.domain.blog.dto.AccountProfile;
+import com.genhub.domain.blog.dto.CommentVO;
+import com.genhub.domain.blog.dto.FavoriteVO;
+import com.genhub.domain.blog.dto.MessageVO;
+import com.genhub.domain.blog.dto.PostTagVO;
+import com.genhub.domain.blog.dto.PostVO;
+import com.genhub.domain.blog.dto.TagVO;
+import com.genhub.domain.blog.dto.UserVO;
 
 public class BeanMapUtils {
 	private static String[] USER_IGNORE = new String[] { "extend", "roles" };

@@ -1,4 +1,4 @@
-package com.genhub.domain.dto.blog;
+package com.genhub.domain.blog.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;

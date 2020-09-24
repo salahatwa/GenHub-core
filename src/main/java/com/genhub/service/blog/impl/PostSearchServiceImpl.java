@@ -26,8 +26,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.genhub.aspect.blog.PostStatusFilter;
 import com.genhub.domain.blog.Post;
-import com.genhub.domain.dto.blog.PostVO;
-import com.genhub.domain.dto.blog.UserVO;
+import com.genhub.domain.blog.dto.PostVO;
+import com.genhub.domain.blog.dto.UserVO;
 import com.genhub.service.blog.PostSearchService;
 import com.genhub.service.blog.UserService;
 import com.genhub.utils.BeanMapUtils;

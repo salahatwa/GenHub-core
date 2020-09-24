@@ -18,8 +18,8 @@ import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
 
 import com.genhub.domain.blog.Comment;
-import com.genhub.domain.dto.blog.CommentComplementor;
-import com.genhub.domain.dto.blog.CommentVO;
+import com.genhub.domain.blog.dto.CommentComplementor;
+import com.genhub.domain.blog.dto.CommentVO;
 import com.genhub.exceptions.ResourceNotFoundException;
 import com.genhub.repository.blog.CommentRepository;
 import com.genhub.service.blog.CommentService;
