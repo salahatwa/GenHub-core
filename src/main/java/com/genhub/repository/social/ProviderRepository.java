@@ -16,9 +16,9 @@ public interface ProviderRepository extends JpaRepository<Provider, String> {
 
 	List<Provider> findByIdIn(List<String> ids);
 
-	List<Provider> findByUser_id(long id);
+	List<Provider> findByCreatedBy(long createdBy);
 
-	Page<Provider> findByUser_id(long userId, Pageable paging);
+	Page<Provider> findByCreatedBy(long createdBy, Pageable paging);
 
 	@Query(value = "SELECT * FROM provider provider LEFT join tasks_providers tasks_providers ON tasks_providers.task_id= :taskId", nativeQuery = true)
 	List<Provider> findAllProvidersByTaskId(@Param("taskId") long taskId);

@@ -91,10 +91,10 @@ public class ProviderController {
 	@GetMapping("/accounts")
 	public ResponseEntity<Page<Provider>> getAllUserSocialAccounts(@CurrentUser UserPrincipal currentUser,
 			@RequestParam(value = "page", defaultValue = Constant.DEFAULT_PAGE_NUMBER) int pageNo,
-			@RequestParam(value = "size", defaultValue = Constant.DEFAULT_PAGE_SIZE) int size,
+			@RequestParam(value = "pageSize", defaultValue = Constant.DEFAULT_PAGE_SIZE) int pageSize,
 			@RequestParam(defaultValue = "id") String sortBy) {
 
-		return ResponseEntity.ok(providerService.getAllAccountsForUser(currentUser.getId(), pageNo, size, sortBy));
+		return ResponseEntity.ok(providerService.getAllAccountsForUser(currentUser.getId(), pageNo, pageSize, sortBy));
 	}
 
 	@GetMapping("/twitter/init")
@@ -168,7 +168,7 @@ public class ProviderController {
 		User user = null;
 
 		if (profilet.isPresent())
-			user = profilet.get().getUser();
+			user = userRepository.findById( profilet.get().getCreatedBy()).get();
 		else {
 			user = userRepository.findById(currenUser.getId())
 					.orElseThrow(() -> new ResourceNotFoundException("ERROR_usernotfound"));
@@ -179,7 +179,6 @@ public class ProviderController {
 			profile.setImage(imgUrl);
 			profile.setProviderType(ProviderType.LINKEDIN);
 			profile.setToken(rs.getAccess_token());
-			profile.setUser(user);
 
 			providerService.save(profile);
 
@@ -216,7 +215,7 @@ public class ProviderController {
 
 		if (profilet.isPresent()) {
 			Provider prof = profilet.get();
-			user = prof.getUser();
+			user = userRepository.findById( prof.getCreatedBy()).get();
 			prof.setToken(accessToken.getValue());
 			prof.setSecret(accessToken.getSecret());
 
@@ -237,7 +236,6 @@ public class ProviderController {
 			profile.setProviderType(ProviderType.TWITTER);
 			profile.setToken(accessToken.getValue());
 			profile.setSecret(accessToken.getSecret());
-			profile.setUser(user);
 			providerService.save(profile);
 		}
 

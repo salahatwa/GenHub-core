@@ -7,33 +7,29 @@ import org.springframework.data.annotation.LastModifiedBy;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-
 @MappedSuperclass
-@JsonIgnoreProperties(
-        value = {"createdBy", "updatedBy"},
-        allowGetters = true
-)
+@JsonIgnoreProperties(value = { "createdBy", "updatedBy" }, allowGetters = true)
 public abstract class UserDateAudit extends DateAudit {
 
-    @CreatedBy
-    private String createdBy;
+	@CreatedBy
+	private long createdBy;
 
-    @LastModifiedBy
-    private String updatedBy;
+	@LastModifiedBy
+	private long updatedBy;
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
+	public long getCreatedBy() {
+		return createdBy;
+	}
 
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
+	public void setCreatedBy(long createdBy) {
+		this.createdBy = createdBy;
+	}
 
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
+	public long getUpdatedBy() {
+		return updatedBy;
+	}
 
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
+	public void setUpdatedBy(long updatedBy) {
+		this.updatedBy = updatedBy;
+	}
 }

@@ -33,8 +33,8 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
 
 	List<Task> findByError(boolean error);
 
-	Page<Task> findByCreatedBy(String userId, Pageable paging);
+	Page<Task> findByCreatedBy(long createdBy, Pageable paging);
 
-	Optional<Task> findByIdAndCreatedBy(long taskId, String userId);
+	Optional<Task> findByIdAndCreatedBy(long taskId, long userId);
 
 }
