@@ -3,7 +3,6 @@ package com.genhub.service.social;
 import java.util.List;
 import java.util.Objects;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,6 +17,9 @@ import com.genhub.repository.social.ProviderRepository;
 import com.genhub.repository.social.TaskRepository;
 import com.genhub.service.social.schedule.ScheduleService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class TaskService {
 
@@ -37,42 +39,46 @@ public class TaskService {
 		return task;
 	}
 
-	public Task getEntityTaskForUser(long userId, long taskId) {
-		Task task = taskRepo.findByIdAndCreatedBy(taskId, userId).orElseThrow(() -> new ResourceNotFoundException(""));
-
-		return task;
-	}
-
 	public Page<Task> getAllTasksForUser(long userId, Integer pageNo, Integer pageSize, String sortBy) {
 		Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.DESC, sortBy));
 
-		
 		Page<Task> pagedResult = taskRepo.findByCreatedBy(userId, paging);
 
 		return pagedResult;
 	}
 
 	public Task save(long userId, Task taskDto) {
+		log.info("Task:{}", taskDto);
+		log.info("Task:{}", taskDto.getCreatedBy());
 
 		Task task = new Task();
 
 		if (Objects.nonNull(taskDto) && Objects.nonNull(taskDto.getId()) && taskDto.getId() != 0) {
 			task = taskRepo.findById(taskDto.getId()).orElseThrow(() -> new ResourceNotFoundException("NotFound"));
 		}
-		BeanUtils.copyProperties(taskDto, task);
+
+		task = taskCopy(task, taskDto);
+
 		task = taskRepo.save(task);
 
-		taskDto.setId(task.getId());
-		
 		if (taskDto.isEnabled()) {
 			List<Provider> providers = providerRepository.findAllProvidersByTaskId(task.getId());
 			task = scheduleService.schedulePost(providers, task);
-			BeanUtils.copyProperties(taskDto, task);
 		}
 
-		
-		
-		return taskDto;
+		return task;
+	}
+
+	private Task taskCopy(Task task, Task taskDto) {
+		task.setContent(taskDto.getContent());
+		task.setDate(taskDto.getDate());
+		task.setEnabled(taskDto.isEnabled());
+		task.setTime(taskDto.getTime());
+		task.setTimezoneOffset(taskDto.getTimezoneOffset());
+		task.setImg(taskDto.getImg());
+		task.setLatitude(taskDto.getLatitude());
+		task.setLongitude(task.getLongitude());
+		return task;
 	}
 
 	public void delete(long id) {
@@ -104,7 +110,6 @@ public class TaskService {
 
 		task.removeProvider(provider);
 
-		
 		taskRepo.save(task);
 
 		System.out.println(task);
